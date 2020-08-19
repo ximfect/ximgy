@@ -4,6 +4,8 @@ import (
 	"image"
 	// PNG decoding
 	_ "image/png"
+	// JPEG decoding
+	_ "image/jpeg"
 	"os"
 )
 
