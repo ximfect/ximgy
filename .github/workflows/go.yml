@@ -23,7 +23,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Test
-      run: cd test
+      run: |
+           cd test
            go build
            .\test.exe
 
@@ -42,6 +43,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Test
-      run: cd test
+      run: |
+           cd test
            go build
            ./test
