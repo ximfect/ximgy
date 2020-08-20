@@ -24,8 +24,8 @@ jobs:
 
     - name: Test
       run: cd test
-           | go build
-           | .\test.exe
+           go build
+           .\test.exe
 
   build-ubuntu:
     name: Build on Ubuntu
@@ -43,5 +43,5 @@ jobs:
 
     - name: Test
       run: cd test
-           | go build
-           | ./test
+           go build
+           ./test
