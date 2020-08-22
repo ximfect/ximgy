@@ -24,17 +24,13 @@ type Pixel struct {
 
 // At returns a pixel from the source image
 func (i *Image) At(x, y int) color.RGBA {
+	x, y = ClampCoords(x, y, i.Size, true)
 	return i.source.At(x, y).(color.RGBA)
 }
 
 // Set modifies a pixel in the output image
 func (i *Image) Set(x, y int, v color.RGBA) {
-	for x < 0 {
-		x += i.Size.X
-	}
-	for y < 0 {
-		y += i.Size.Y
-	}
+	x, y = ClampCoords(x, y, i.Size, true)
 	i.output.SetRGBA(x, y, v)
 }
 
