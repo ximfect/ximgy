@@ -36,7 +36,7 @@ func (i *Image) Set(x, y int, v color.RGBA) {
 
 // Iterate calls the given function for every pixel in the source image,
 // taking it's output as the new value for the pixel in the output image.
-func (i *Image) Iterate(f func(Pixel) color.RGBA) {
+func (i *Image) Iterate(f func(Pixel) (color.RGBA, error)) error {
 	for y := 0; y < i.Size.Y; y++ {
 		for x := 0; x < i.Size.X; x++ {
 			value := i.At(x, y)
@@ -46,10 +46,14 @@ func (i *Image) Iterate(f func(Pixel) color.RGBA) {
 			b8 := uint8(b32 >> 8)
 			a8 := uint8(a32 >> 8)
 			pixel := Pixel{r8, g8, b8, a8, x, y}
-			out := f(pixel)
+			out, err := f(pixel)
+			if err != nil {
+				return err
+			}
 			i.Set(x, y, out)
 		}
 	}
+	return nil
 }
 
 // SetSource sets the input image
