@@ -7,8 +7,8 @@ import (
 	"github.com/ximfect/ximgy"
 )
 
-func invert(pixel ximgy.Pixel) color.RGBA {
-	return color.RGBA{255 - pixel.R, 255 - pixel.G, 255 - pixel.B, pixel.A}
+func invert(pixel ximgy.Pixel) (color.RGBA, error) {
+	return color.RGBA{255 - pixel.R, 255 - pixel.G, 255 - pixel.B, pixel.A}, nil
 }
 
 func main() {
