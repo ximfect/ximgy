@@ -12,7 +12,7 @@ func invert(pixel ximgy.Pixel) (color.RGBA, error) {
 }
 
 func main() {
-	img, err := ximgy.Open("EffzbrUXsAMKkkp.png")
+	img, err := ximgy.Open("test.tiff")
 	if err != nil {
 		fmt.Println(err)
 		return

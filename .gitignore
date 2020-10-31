@@ -1,2 +1,5 @@
 test/*
+.idea/*
+
 !test/*.go
+go.sum

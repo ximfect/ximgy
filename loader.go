@@ -7,6 +7,13 @@ import (
 	// JPEG decoding
 	_ "image/jpeg"
 	"os"
+
+	// BMP decoding
+	_ "golang.org/x/image/bmp"
+	// TIFF decoding
+	_ "golang.org/x/image/tiff"
+	// WEBP decoding
+	_ "golang.org/x/image/webp"
 )
 
 // Open opens, reads, decodes and constructs an Image

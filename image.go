@@ -12,7 +12,7 @@ type Image struct {
 	Size   image.Point
 }
 
-// Pixel represents a pixel used in Interate
+// Pixel represents a pixel used in Iterate
 type Pixel struct {
 	R uint8
 	G uint8
